@@ -6,25 +6,18 @@
 </description>
     <link>http://xinerd.github.io/</link>
     <atom:link href="http://xinerd.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 05 Jan 2016 22:06:11 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 22:06:11 -0500</lastBuildDate>
+    <pubDate>Tue, 05 Jan 2016 22:18:08 -0500</pubDate>
+    <lastBuildDate>Tue, 05 Jan 2016 22:18:08 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>在GitHub上创建project page</title>
-        <description>&lt;p&gt;项目站点的所有内容都应该保存在gh-pages分支下。&lt;/p&gt;
-
-&lt;p&gt;通过username.github.io/project访问项目内容。&lt;/p&gt;
-
+        <title>Create project page on GitHub</title>
+        <description>
 </description>
-        <pubDate>Sun, 03 Jan 2016 19:00:21 -0500</pubDate>
-        <link>http://xinerd.github.io/jekyll/update/2016/01/03/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://xinerd.github.io/jekyll/update/2016/01/03/welcome-to-jekyll.html</guid>
+        <pubDate>Tue, 05 Jan 2016 00:00:00 -0500</pubDate>
+        <link>http://xinerd.github.io/2016/01/05/create-project-page-on-github.html</link>
+        <guid isPermaLink="true">http://xinerd.github.io/2016/01/05/create-project-page-on-github.html</guid>
         
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
         
       </item>
     
