@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jelly Chinese Version</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://xinerd.github.io/</link>
+    <atom:link href="http://xinerd.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 05 Jan 2016 21:50:38 -0500</pubDate>
+    <lastBuildDate>Tue, 05 Jan 2016 21:50:38 -0500</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>在GitHub上创建project page</title>
+        <description>&lt;p&gt;项目站点的所有内容都应该保存在gh-pages分支下。&lt;/p&gt;
+
+&lt;p&gt;通过username.github.io/project访问项目内容。&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 03 Jan 2016 19:00:21 -0500</pubDate>
+        <link>http://xinerd.github.io/jekyll/update/2016/01/03/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://xinerd.github.io/jekyll/update/2016/01/03/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>
