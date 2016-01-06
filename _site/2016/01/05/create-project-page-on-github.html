@@ -10,8 +10,8 @@
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
-    <link rel="stylesheet" href="jekyll/css/main.css">
-    <link rel="canonical" href="http://xinerd.github.io/jekyll/2016/01/05/create-project-page-on-github.html">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://xinerd.github.io//2016/01/05/create-project-page-on-github.html">
 </head>
 
 
@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="jekyll/">Jelly Chinese Version</a>
+    <a class="site-title" href="/">Jelly Chinese Version</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -35,7 +35,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="jekyll/about/">About</a>
+          <a class="page-link" href="/about/">About</a>
           
         
           
@@ -62,7 +62,25 @@
   </header>
 
   <article class="post-content">
-    
+    <h1 id="project-page-url-structure">Project Page URL Structure</h1>
+<p>更新内容到GitHub上之前能在本地预览一下文章是一个很好排除基本错误的方法。
+通过如下方式来设置url</p>
+
+<ul>
+  <li>
+    <p>在_config.yml中，把baseurl设置成你的/project-name</p>
+  </li>
+  <li>
+    <p>在引用js/css时，使用<code>/path/to/css.css</code></p>
+  </li>
+  <li>
+    <p>使用permalinks or internal links时，使用``</p>
+  </li>
+  <li>
+    <p>在本地测试时，使用<code>localhost:4000/project-name</code>或者<code>jekyll serve --baseurl ''</code></p>
+  </li>
+</ul>
+
 
   </article>
 

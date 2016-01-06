@@ -4,19 +4,37 @@
     <title>Jelly Chinese Version</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://xinerd.github.io/jekyll/</link>
-    <atom:link href="http://xinerd.github.io/jekyll/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 05 Jan 2016 22:28:55 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 22:28:55 -0500</lastBuildDate>
+    <link>http://xinerd.github.io//</link>
+    <atom:link href="http://xinerd.github.io//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 05 Jan 2016 23:10:47 -0500</pubDate>
+    <lastBuildDate>Tue, 05 Jan 2016 23:10:47 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>Create project page on GitHub</title>
-        <description>
+        <description>&lt;h1 id=&quot;project-page-url-structure&quot;&gt;Project Page URL Structure&lt;/h1&gt;
+&lt;p&gt;更新内容到GitHub上之前能在本地预览一下文章是一个很好排除基本错误的方法。
+通过如下方式来设置url&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;在_config.yml中，把baseurl设置成你的/project-name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在引用js/css时，使用&lt;code&gt;/path/to/css.css&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用permalinks or internal links时，使用``&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在本地测试时，使用&lt;code&gt;localhost:4000/project-name&lt;/code&gt;或者&lt;code&gt;jekyll serve --baseurl &#39;&#39;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 </description>
         <pubDate>Tue, 05 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://xinerd.github.io/jekyll/2016/01/05/create-project-page-on-github.html</link>
-        <guid isPermaLink="true">http://xinerd.github.io/jekyll/2016/01/05/create-project-page-on-github.html</guid>
+        <link>http://xinerd.github.io//2016/01/05/create-project-page-on-github.html</link>
+        <guid isPermaLink="true">http://xinerd.github.io//2016/01/05/create-project-page-on-github.html</guid>
         
         
       </item>
