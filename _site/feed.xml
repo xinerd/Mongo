@@ -4,10 +4,10 @@
     <title>Jelly Chinese Version</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://xinerd.github.io/</link>
-    <atom:link href="http://xinerd.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 05 Jan 2016 22:18:08 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 22:18:08 -0500</lastBuildDate>
+    <link>http://xinerd.github.io/jekyll/</link>
+    <atom:link href="http://xinerd.github.io/jekyll/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 05 Jan 2016 22:28:55 -0500</pubDate>
+    <lastBuildDate>Tue, 05 Jan 2016 22:28:55 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>
 </description>
         <pubDate>Tue, 05 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://xinerd.github.io/2016/01/05/create-project-page-on-github.html</link>
-        <guid isPermaLink="true">http://xinerd.github.io/2016/01/05/create-project-page-on-github.html</guid>
+        <link>http://xinerd.github.io/jekyll/2016/01/05/create-project-page-on-github.html</link>
+        <guid isPermaLink="true">http://xinerd.github.io/jekyll/2016/01/05/create-project-page-on-github.html</guid>
         
         
       </item>
