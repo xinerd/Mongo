@@ -16,7 +16,6 @@ import static com.mongodb.client.model.Filters.eq;
 
 /**
  * DAOImpl
- * COPYRIGHT ©2014-2024, FMACHINE.CN, ALL RIGHTS RESERVED
  *
  * @author XIN MING
  * @since 4/15/16
@@ -35,11 +34,6 @@ public class DAOImpl {
 
     public MongoDatabase getMongoDataBase() {
         return mongoClient.getDatabase(DB_NAME);
-    }
-
-    public void findAll() {
-        FindIterable<Document> iterable = this.db.getCollection(collectionName).find();
-        printDocuments(iterable);
     }
 
     public void findByFieldName(String fieldName, String fieldValue) {
@@ -63,15 +57,21 @@ public class DAOImpl {
     /**
      * Find all id and assigned project name
      *
+     * 2.Using the new Document class
+     * collection.find().projection(
+     *  new Document("username", true).append("lastname", true));
+     *
+     * 3.Using the new Projections builder
+     * collection.find().projection(
+     *  Projections.include("username", "lastname"));
+     *
      * @param projectName For example: keywords or related_questions
      * @return all records with _id and corresponding project value.
      */
     public FindIterable<Document> findWithProjection(String projectName) {
-        //        FindIterable<Document> iterable =
         return db.getCollection(collectionName).find()
                 .projection(new BasicDBObject(projectName, true).append("_id", true))
                 .limit(10);
-        //        printDocuments(iterable);
     }
 
     public Map<String, List<String>> saveKeywords(final FindIterable<Document> iterable) {
@@ -92,36 +92,6 @@ public class DAOImpl {
                         keywordsContainer.put(keyword, sourceList);
                     }
                 }
-                // 4
-//                Set<String> keySet = document.keySet();
-//                for (String s : keySet) {
-//                    Object obj = document.get(s);
-//                    if (obj instanceof ArrayList) {
-//                        System.out.println("collection : ");
-//                        ArrayList<String> keywords = (ArrayList<String>) obj;
-//                        for (String keyword : keywords) {
-//                            System.out.print(keyword + "\t");
-//                        }
-//                    } else
-//                        System.out.println("_id : " + obj.toString());
-//                }
-
-                //3
-//                Collection<Object> objCollection = document.values();
-//                for (Object o : objCollection) {
-//                    System.out.println(o);
-//                }
-//                System.out.println("=================");
-
-                //2
-//                ArrayList<String> keywords = (ArrayList<String>) document.get("keywords");
-//                for (String keyword : keywords) {
-//                    System.out.println(keyword);
-//                }
-                //1
-//                String temp = document.getString("keywords");
-//                System.out.println(temp);
-
             }
         });
         return keywordsContainer;

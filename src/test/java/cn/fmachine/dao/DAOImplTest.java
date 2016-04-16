@@ -9,7 +9,6 @@ import java.util.Map;
 
 /**
  * DAOImplTest
- * COPYRIGHT ©2014-2024, FMACHINE.CN, ALL RIGHTS RESERVED
  *
  * @author XIN MING
  * @since 4/15/16
@@ -46,31 +45,5 @@ public class DAOImplTest {
         FindIterable<Document> iterable = dao.findWithProjection("related_questions");
 
     }
-
-    @Test
-    public void testFindAll() throws Exception {
-//        DAOImpl dao = new DAOImpl();
-//        dao.findAll();
-    }
-
-    @Test
-    public void testFindByFieldName() throws Exception {
-//        DAOImpl dao = new DAOImpl();
-//        dao.findByFieldName("borough", "Manhattan");
-//        dao.findByFieldName("address.zipcode", "10075");
-    }
-
-    @Test
-    public void testEqualityFilter() throws Exception {
-//        DAOImpl dao = new DAOImpl();
-//        dao.equalityFilter("borough", "Manhattan");
-    }
-
-    @Test
-    public void testFindByEmbeddedDoc() throws Exception {
-//        DAOImpl dao = new DAOImpl();
-//        dao.findByEmbeddedDoc("address", "zipcode", "10075");
-    }
-
 
 }
