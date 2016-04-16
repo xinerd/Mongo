@@ -16,6 +16,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 /**
  * DAOImpl
+ * COPYRIGHT ©2014-2024, FMACHINE.CN, ALL RIGHTS RESERVED
  *
  * @author XIN MING
  * @since 4/15/16
@@ -23,32 +24,32 @@ import static com.mongodb.client.model.Filters.eq;
 public class DAOImpl {
 
     //    private MongoClient mongoClient = new MongoClient("129.63.16.136",27017);
-    private MongoClient mongoClient = new MongoClient();
-    private MongoDatabase db = null;
-    private final String DB_NAME = "yyga";
-    private String collectionName = "raw_data";
+    private MongoClient mongoClient;
+    private MongoDatabase db;
 
-    public DAOImpl() {
-        this.db = getMongoDataBase();
+    public DAOImpl(MongoClient mongoClient, String dbName) {
+        this.mongoClient = mongoClient;
+        this.db = getMongoDataBase(dbName);
     }
 
-    public MongoDatabase getMongoDataBase() {
-        return mongoClient.getDatabase(DB_NAME);
+    public MongoDatabase getMongoDataBase(String dbName) {
+        return mongoClient.getDatabase(dbName);
     }
 
-    public void findByFieldName(String fieldName, String fieldValue) {
+
+    public void findByFieldName(String collectionName, String fieldName, String fieldValue) {
         FindIterable<Document> iterable = db.getCollection(collectionName).find(
                 new Document(fieldName, fieldValue));
         printDocuments(iterable);
     }
 
-    public void equalityFilter(String fieldName, String fieldValue) {
+    public void equalityFilter(String collectionName, String fieldName, String fieldValue) {
         FindIterable<Document> iterable = db.getCollection(collectionName).find(
                 eq(fieldName, fieldValue));
         printDocuments(iterable);
     }
 
-    public void findByEmbeddedDoc(String fieldName, String embeddedName, String value) {
+    public void findByEmbeddedDoc(String collectionName, String fieldName, String embeddedName, String value) {
         FindIterable<Document> iterable = db.getCollection(collectionName).find(
                 new Document(fieldName + '.' + embeddedName, value));
         printDocuments(iterable);
@@ -56,19 +57,17 @@ public class DAOImpl {
 
     /**
      * Find all id and assigned project name
-     *
+     * <p/>
      * 2.Using the new Document class
-     * collection.find().projection(
-     *  new Document("username", true).append("lastname", true));
-     *
+     * collection.find().projection(new Document("username", true).append("lastname", true).append("firstname", true));
+     * <p/>
      * 3.Using the new Projections builder
-     * collection.find().projection(
-     *  Projections.include("username", "lastname"));
+     * collection.find().projection(Projections.include("username", "lastname", "firstname"));
      *
      * @param projectName For example: keywords or related_questions
      * @return all records with _id and corresponding project value.
      */
-    public FindIterable<Document> findWithProjection(String projectName) {
+    public FindIterable<Document> findWithProjection(String collectionName, String projectName) {
         return db.getCollection(collectionName).find()
                 .projection(new BasicDBObject(projectName, true).append("_id", true))
                 .limit(10);
@@ -78,10 +77,8 @@ public class DAOImpl {
         final Map<String, List<String>> keywordsContainer = new HashMap<String, List<String>>();
         iterable.forEach(new Block<Document>() {
             public void apply(Document document) {
-                // get _id
-                String id = document.get("_id").toString();
-                // get keywords
-                ArrayList<String> keywords = (ArrayList<String>) document.get("keywords");
+                String id = document.get("_id").toString();// get _id
+                ArrayList<String> keywords = (ArrayList<String>) document.get("keywords");// get keywords
                 // put keyword and corresponding id to map
                 for (String keyword : keywords) {
                     if (keywordsContainer.containsKey(keyword)) {

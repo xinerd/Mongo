@@ -1,5 +1,6 @@
 package cn.fmachine.dao;
 
+import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import org.bson.Document;
 import org.junit.Test;
@@ -14,13 +15,18 @@ import java.util.Map;
  * @since 4/15/16
  */
 public class DAOImplTest {
+    private final String DB_NAME = "yyga";
+    private String collectionName = "raw_data";
+
     @Test
     public void testGetKeywords() throws Exception {
-        DAOImpl dao = new DAOImpl();
+        MongoClient mongoClient = new MongoClient();
+        DAOImpl dao = new DAOImpl(mongoClient, DB_NAME);
+
         System.out.println("==============All id and keywords===================");
-        dao.printDocuments(dao.findWithProjection("keywords"));
+        dao.printDocuments(dao.findWithProjection(collectionName, "keywords"));
         System.out.println("==============All keywords and related ids=============");
-        FindIterable<Document> iterable = dao.findWithProjection("keywords");
+        FindIterable<Document> iterable = dao.findWithProjection(collectionName, "keywords");
         Map<String, List<String>> keywordWithResource = dao.saveKeywords(iterable);
         for (Map.Entry<String, List<String>> entry : keywordWithResource.entrySet()) {
             System.out.println("==========new record===========");
@@ -31,19 +37,24 @@ public class DAOImplTest {
             }
             System.out.println("\n\n");
         }
+        mongoClient.close();
     }
 
     @Test
     public void testFindWithProjection() throws Exception {
-        DAOImpl dao = new DAOImpl();
-        dao.printDocuments(dao.findWithProjection("related_questions"));
+        MongoClient mongoClient = new MongoClient();
+        DAOImpl dao = new DAOImpl(mongoClient, DB_NAME);
+        dao.printDocuments(dao.findWithProjection(collectionName, "related_questions"));
+        mongoClient.close();
     }
 
     @Test
     public void testSaveQuestions() throws Exception {
-        DAOImpl dao = new DAOImpl();
-        FindIterable<Document> iterable = dao.findWithProjection("related_questions");
-
+        MongoClient mongoClient = new MongoClient();
+        DAOImpl dao = new DAOImpl(mongoClient, DB_NAME);
+        FindIterable<Document> iterable = dao.findWithProjection(collectionName,
+                "related_questions");
+        mongoClient.close();
     }
 
 }
