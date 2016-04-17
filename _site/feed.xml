@@ -1,40 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jelly Chinese Version</title>
+    <title>Learn Mongo</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://xinerd.github.io//</link>
-    <atom:link href="http://xinerd.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 05 Jan 2016 23:10:47 -0500</pubDate>
-    <lastBuildDate>Tue, 05 Jan 2016 23:10:47 -0500</lastBuildDate>
+    <link>http://xinerd.github.io//Mongo/</link>
+    <atom:link href="http://xinerd.github.io//Mongo/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 17 Apr 2016 18:32:47 -0400</pubDate>
+    <lastBuildDate>Sun, 17 Apr 2016 18:32:47 -0400</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Create project page on GitHub</title>
-        <description>&lt;h1 id=&quot;project-page-url-structure&quot;&gt;Project Page URL Structure&lt;/h1&gt;
-&lt;p&gt;更新内容到GitHub上之前能在本地预览一下文章是一个很好排除基本错误的方法。
-通过如下方式来设置url&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;在_config.yml中，把baseurl设置成你的/project-name&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在引用js/css时，使用&lt;code&gt;/path/to/css.css&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用permalinks or internal links时，使用``&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在本地测试时，使用&lt;code&gt;localhost:4000/project-name&lt;/code&gt;或者&lt;code&gt;jekyll serve --baseurl &#39;&#39;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
+        <title>Mongo backup</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;mongoimport&lt;/li&gt;
+  &lt;li&gt;mongoexport&lt;/li&gt;
+  &lt;li&gt;mongorestore&lt;/li&gt;
+  &lt;li&gt;mongodump&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1 id=&quot;mongoimport&quot;&gt;mongoimport&lt;/h1&gt;
+
+&lt;p&gt;The mongoimport tool imports content from an Extended JSON, CSV, or TSV export created by
+mongoexport.&lt;/p&gt;
+
+&lt;h2 id=&quot;import-json-to-remote-host-running-with-authentication&quot;&gt;Import JSON to Remote Host Running with Authentication&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+mongoimport --host mongodb1.example.net --port 37017 --username user --password pass --collection contacts --db marketing --file /opt/backups/mdb1-examplenet.json
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;csv-import&quot;&gt;CSV Import&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;
+mongoimport --db users --collection contacts --type csv --headerline --file /opt/backups/contacts.csv
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mongoexport&quot;&gt;mongoexport&lt;/h1&gt;
+&lt;p&gt;is a utility that produces a JSON or CSV export of data stored in a MongoDB instance.&lt;/p&gt;
+
+&lt;h2 id=&quot;export-from-remote-host-running-with-authentication&quot;&gt;Export from Remote Host Running with Authentication&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+mongoexport --host mongodb1.example.net --port 37017 --username user --password pass --collection contacts --db marketing --out mdb1-examplenet.json
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;export-query-results&quot;&gt;Export Query Results&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+mongoexport --db sales --collection contacts --query &#39;{&quot;field&quot;: 1}&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;export-in-csv-format&quot;&gt;Export in CSV Format&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;
+mongoexport --db users --collection contacts --type=csv --fields name,address --out /opt/backups/contacts.csv
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Using the –fieldFile option, specify the fields to export with the file.&lt;/p&gt;
+
+&lt;h2 id=&quot;export-query-results-1&quot;&gt;Export Query Results&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+mongoexport --db sales --collection contacts --query &#39;{&quot;field&quot;: 1}&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You must enclose the query in single quotes (e.g. ‘) to ensure that it does not interact with your shell environment.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 05 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://xinerd.github.io//2016/01/05/create-project-page-on-github.html</link>
-        <guid isPermaLink="true">http://xinerd.github.io//2016/01/05/create-project-page-on-github.html</guid>
+        <link>http://xinerd.github.io//Mongo/2016/01/05/mongo-backup.html</link>
+        <guid isPermaLink="true">http://xinerd.github.io//Mongo/2016/01/05/mongo-backup.html</guid>
+        
+        <category>dba</category>
         
         
       </item>
