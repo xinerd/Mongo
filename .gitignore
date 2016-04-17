@@ -78,3 +78,9 @@ Session.vim
 .netrwhist
 *~
 
+### Jekyll template
+_site/
+.sass-cache/
+.jekyll-metadata
+
+/.gitignore
