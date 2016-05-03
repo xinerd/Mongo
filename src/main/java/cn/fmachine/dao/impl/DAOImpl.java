@@ -1,4 +1,4 @@
-package cn.fmachine.dao;
+package cn.fmachine.dao.impl;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
@@ -12,8 +12,7 @@ import java.util.List;
 import static com.mongodb.client.model.Filters.eq;
 
 /**
- * DAOImpl
- * COPYRIGHT ©2014-2024, FMACHINE.CN, ALL RIGHTS RESERVED
+ * DAOImpl Test
  *
  * @author XIN MING
  * @since 4/15/16
@@ -55,24 +54,6 @@ public class DAOImpl {
     public FindIterable<Document> findWithProjection(String collectionName, String projectName) {
         return db.getCollection(collectionName).find()
                 .projection(new BasicDBObject(projectName, true).append("_id", true));
-    }
-
-    public void findByFieldName(String collectionName, String fieldName, String fieldValue) {
-        FindIterable<Document> iterable = db.getCollection(collectionName).find(
-                new Document(fieldName, fieldValue));
-        printDocuments(iterable);
-    }
-
-    public void equalityFilter(String collectionName, String fieldName, String fieldValue) {
-        FindIterable<Document> iterable = db.getCollection(collectionName).find(
-                eq(fieldName, fieldValue));
-        printDocuments(iterable);
-    }
-
-    public void findByEmbeddedDoc(String collectionName, String fieldName, String embeddedName, String value) {
-        FindIterable<Document> iterable = db.getCollection(collectionName).find(
-                new Document(fieldName + '.' + embeddedName, value));
-        printDocuments(iterable);
     }
 
     public void printDocuments(FindIterable<Document> iterable) {
